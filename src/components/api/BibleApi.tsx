@@ -3,11 +3,12 @@ import React, { useEffect, useState } from 'react';
 
 // API de terceiros: mostra citação da bíblia
 export default function BibleApi() {
+  // Desestructuring para armazenar numa variável cada item E alterar os dados via o hook useState
   const [verse, setVerse] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
-  useEffect(() => { // alterar estado do componente (readOnly)
+  useEffect(() => { // alterar estado do componente
     fetchVerse();
   }, []);
 
